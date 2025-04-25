@@ -1,33 +1,22 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
-import java.util.jar.JarEntry;
 
-public class Main {
 
-    static void printfile (String file) {
+public class VideoGameSales {
+
+    static ArrayList readFileIntoArraylist (String file) {
         BufferedReader reader = null;
         String line ="";
 
         try {
             reader = new BufferedReader(new FileReader(file));
-            int i=0;
             ArrayList<gameSales> gameArray = new ArrayList<>();
             while ((line = reader.readLine()) != null) {
                 String[] row = line.split(",");
-                /*
-                for (String index : row) {
-                    System.out.printf("-%10s", index);
-                }
-                */
-                // System.out.println();
                 gameSales abc = new gameSales(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10]);
-                // System.out.println(abc.getName() + "  " + abc.getPlatform() + "  " +  abc.getYear() + "  " +  abc.getGenre() + "  " +  abc.getPublisher() + "  " +  abc.getNAs() + "  " +  abc.getEUs() + "  " +  abc.getJPs() + "  " +  abc.getOtherSales() + "  " +  abc.getGlobalSale());
                 gameArray.add (abc);
             }
-            for (int a = 0 ; a< gameArray.size(); a++) {
-                System.out.println(gameArray.get(a).getRank() + gameArray.get(a).getName() + gameArray.get(a).getPlatform() + gameArray.get(a).getYear() + gameArray.get(a).getPublisher() + gameArray.get(a).getNAs() + gameArray.get(a).getEUs() + gameArray.get(a).getJPs() + gameArray.get(a).getOtherSales() + gameArray.get(a).getGlobalSale());
-            }
+            return gameArray;
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -39,7 +28,7 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
+        return null;
     }
 
     static class gameSales {
@@ -102,12 +91,14 @@ public class Main {
         String getGlobalSale() {
             return globalSale;
         }
-
     }
+
     public static void main (String[] args) {
-       printfile("src//videoGamesSales.csv");
 
-
+        ArrayList<gameSales> gameList = readFileIntoArraylist("src//videoGamesSales.csv");
+        for (int a = 0 ; a< gameList.size(); a++) {
+            System.out.println(gameList.get(a).getRank() + gameList.get(a).getName() + gameList.get(a).getPlatform() + gameList.get(a).getYear() + gameList.get(a).getGenre() + gameList.get(a).getPublisher() + gameList.get(a).getNAs() + gameList.get(a).getEUs() + gameList.get(a).getJPs() + gameList.get(a).getOtherSales() + gameList.get(a).getGlobalSale());
+        }
     }
 }
 
