@@ -4,20 +4,30 @@ import java.util.ArrayList;
 
 public class VideoGameSales {
 
-    static ArrayList readFileIntoArraylist (String file) {
+    static ArrayList readFileIntoArraylist (String file) throws IOException {
         BufferedReader reader = null;
         String line ="";
 
         try {
             reader = new BufferedReader(new FileReader(file));
             ArrayList<gameSales> gameArray = new ArrayList<>();
+            int i=0;
+
             while ((line = reader.readLine()) != null) {
                 String[] row = line.split(",");
-                gameSales abc = new gameSales(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10]);
-                gameArray.add (abc);
+                boolean checkNA = true;
+                if (row[3].equals("N/A"))
+                    checkNA = false;
+                System.out.println(i);
+                if(i!=0 && checkNA) {
+                    gameSales abc = new gameSales(Integer.valueOf(row[0]), row[1], row[2], Integer.valueOf(row[3]), row[4], row[5], Double.valueOf(row[6]), Double.valueOf(row[7]), Double.valueOf(row[8]), Double.valueOf(row[9]), Double.valueOf(row[10]));
+                    gameArray.add(abc);
+                }
+                i = i +1;
             }
             return gameArray;
         }
+
         catch(Exception e) {
             e.printStackTrace();
         }
@@ -32,19 +42,19 @@ public class VideoGameSales {
     }
 
     static class gameSales {
-        String rank;
+        int rank;
         String name;
         String platform;
-        String year;
+        int year;
         String genre;
         String publisher;
-        String NAs;
-        String EUs;
-        String JPs;
-        String otherSales;
-        String globalSale;
+        double NAs;
+        double EUs;
+        double JPs;
+        double otherSales;
+        double globalSale;
 
-        gameSales(String rank, String name, String platform, String year, String genre, String publisher, String NAs, String EUs, String JPs, String otherSales, String globalSale) {
+        gameSales(int rank, String name, String platform, int year, String genre, String publisher, double NAs, double EUs, double JPs, double otherSales, double globalSale) {
             this.rank = rank;
             this.name = name;
             this.platform = platform;
@@ -58,7 +68,7 @@ public class VideoGameSales {
             this.globalSale = globalSale;
         }
 
-        String getRank() {
+        int getRank() {
             return rank;
         }
         String getName() {
@@ -67,7 +77,7 @@ public class VideoGameSales {
         String getPlatform() {
             return platform;
         }
-        String getYear() {
+        int getYear() {
             return year;
         }
         String getGenre() {
@@ -76,24 +86,24 @@ public class VideoGameSales {
         String getPublisher() {
             return publisher;
         }
-        String getNAs() {
+        double getNAs() {
             return NAs;
         }
-        String getEUs() {
+        double getEUs() {
             return EUs;
         }
-        String getJPs() {
+        double getJPs() {
             return JPs;
         }
-        String getOtherSales() {
+        double getOtherSales() {
             return otherSales;
         }
-        String getGlobalSale() {
+        double getGlobalSale() {
             return globalSale;
         }
     }
 
-    public static void main (String[] args) {
+    public static void main (String[] args) throws IOException {
 
         ArrayList<gameSales> gameList = readFileIntoArraylist("src//videoGamesSales.csv");
         for (int a = 0 ; a< gameList.size(); a++) {
