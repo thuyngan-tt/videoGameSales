@@ -1,4 +1,4 @@
-Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales
+Rank Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales
 1,Wii Sports,Wii,2006,Sports,Nintendo,41.49,29.02,3.77,8.46,82.74
 2,Super Mario Bros.,NES,1985,Platform,Nintendo,29.08,3.58,6.81,0.77,40.24
 3,Mario Kart Wii,Wii,2008,Racing,Nintendo,15.85,12.88,3.79,3.31,35.82
@@ -942,7 +942,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 942,Gran Turismo Concept 2001 Tokyo,PS2,2001,Racing,Unknown,0,1.1,0.42,0.33,1.84
 943,Demon's Souls,PS3,2009,Role-Playing,Namco Bandai Games,0.97,0.34,0.35,0.18,1.84
 944,NCAA Football 06,PS2,2005,Sports,Electronic Arts,1.53,0.05,0,0.25,1.84
-945,"Hey You, Pikachu!",N64,1998,Simulation,Nintendo,0.83,0.06,0.93,0,1.83
+945,"Hey You Pikachu!",N64,1998,Simulation,Nintendo,0.83,0.06,0.93,0,1.83
 946,2 Games in 1: Sonic Advance & ChuChu Rocket!,GBA,2005,Misc,THQ,1.31,0.49,0,0.03,1.83
 947,World of Warcraft: Mists of Pandaria,PC,2012,Role-Playing,Activision,0.84,0.76,0,0.23,1.83
 948,Jet Moto,PS,1996,Racing,Sony Computer Entertainment,1.33,0.4,0.03,0.07,1.83
@@ -1090,7 +1090,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 1090,Star Wars: Battlefront II,XB,2005,Shooter,Activision,1.22,0.39,0,0.06,1.67
 1091,Disney's DuckTales,NES,1989,Platform,Capcom,0.91,0.3,0.42,0.04,1.67
 1092,Tony Hawk's Pro Skater 3,PS,2001,Sports,Activision,1.09,0.49,0.02,0.07,1.67
-1093,"Monsters, Inc.",GBA,2001,Adventure,THQ,0.59,0.95,0.03,0.1,1.67
+1093,"Monsters Inc.",GBA,2001,Adventure,THQ,0.59,0.95,0.03,0.1,1.67
 1094,StarCraft II: Heart of the Swarm,PC,2013,Strategy,Activision,0.82,0.65,0,0.19,1.67
 1095,PGR: Project Gotham Racing 2,XB,2003,Racing,Microsoft Game Studios,0.97,0.59,0.04,0.07,1.67
 1096,Spy Hunter,PS2,2001,Racing,Midway Games,1.13,0.32,0,0.22,1.67
@@ -1625,7 +1625,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 1625,Castlevania,NES,1986,Platform,Konami Digital Entertainment,0.54,0.06,0.62,0.01,1.23
 1626,Donkey Kong Country 2,GBA,2004,Platform,Nintendo,0.79,0.27,0.12,0.04,1.23
 1627,Bayonetta,PS3,2009,Action,Sega,0.44,0.41,0.21,0.17,1.23
-1628,"WarioWare, Inc.: Mega MicroGame$",GBA,2003,Puzzle,Nintendo,0.4,0.11,0.7,0.02,1.23
+1628,"WarioWare Inc.: Mega MicroGame$",GBA,2003,Puzzle,Nintendo,0.4,0.11,0.7,0.02,1.23
 1629,Star Wars: Battlefront II,PSP,2005,Shooter,LucasArts,1.05,0.06,0.01,0.11,1.23
 1630,Madden NFL 17,PS4,2016,Sports,Electronic Arts,0.92,0.08,0,0.23,1.23
 1631,Boom Blox,Wii,2008,Puzzle,Electronic Arts,0.72,0.38,0,0.12,1.23
@@ -1832,7 +1832,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 1832,Spider-Man 2,XB,2004,Action,Activision,0.82,0.26,0,0.04,1.12
 1833,Counter-Strike,XB,2003,Shooter,Microsoft Game Studios,0.85,0.23,0,0.04,1.11
 1834,Mad Max (2015),PS4,2015,Action,Warner Bros. Interactive Entertainment,0.32,0.58,0.04,0.17,1.11
-1835,"Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)",PS2,2007,Action,Activision,0.63,0.37,0,0.11,1.11
+1835,"Transformers: The Game (XBox 360 PS2 PS3 Wii & PC Versions)",PS2,2007,Action,Activision,0.63,0.37,0,0.11,1.11
 1836,GRID,PS3,2008,Racing,Codemasters,0.31,0.57,0.03,0.2,1.11
 1837,Guitar Hero Encore: Rocks The 80s,PS2,2007,Misc,RedOctane,0.92,0.04,0,0.15,1.11
 1838,Sunset Overdrive,XOne,2014,Shooter,Microsoft Game Studios,0.62,0.4,0,0.08,1.11
@@ -2408,7 +2408,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 2408,Enduro,2600,1982,Misc,Quelle,0.81,0.05,0,0.01,0.87
 2409,Tales of Xillia 2,PS3,2012,Role-Playing,Namco Bandai Games,0.2,0.15,0.45,0.07,0.87
 2410,SingStar '90s,PS2,2007,Misc,Sony Computer Entertainment,0.1,0.59,0,0.18,0.87
-2411,Monster Strike 3DS,3DS,2015,Action,"mixi, Inc",0,0,0.86,0,0.86
+2411,Monster Strike 3DS,3DS,2015,Action,"mixi Inc",0,0,0.86,0,0.86
 2412,Tomb Raider: Anniversary,Wii,2007,Action,Eidos Interactive,0.12,0.63,0,0.11,0.86
 2413,Winning Eleven: Pro Evolution Soccer 2007,PSP,2006,Sports,Konami Digital Entertainment,0.01,0.72,0.12,0.01,0.86
 2414,Darksiders II,PS3,2012,Action,THQ,0.35,0.37,0.01,0.14,0.86
@@ -2887,7 +2887,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 2887,Blast Corps,N64,1997,Action,Nintendo,0.39,0.09,0.17,0.06,0.71
 2888,LEGO Harry Potter: Years 1-4,PSP,2010,Action,Warner Bros. Interactive Entertainment,0.14,0.37,0,0.19,0.71
 2889,Tactics Ogre: Let Us Cling Together,SNES,1995,Role-Playing,Quest,0,0,0.71,0,0.71
-2890,"WarioWare, Inc.: Mega Party Game$",GC,2003,Puzzle,Nintendo,0.2,0.05,0.44,0.02,0.71
+2890,"WarioWare Inc.: Mega Party Game$",GC,2003,Puzzle,Nintendo,0.2,0.05,0.44,0.02,0.71
 2891,Football Manager 2014,PC,2013,Sports,Sega,0,0.6,0,0.1,0.71
 2892,Battle Arena Toshinden 2,PS,1995,Fighting,Sony Computer Entertainment,0.15,0.1,0.41,0.05,0.71
 2893,WWE SmackDown vs. Raw 2011,PSP,2010,Fighting,THQ,0.22,0.31,0,0.17,0.71
@@ -2917,7 +2917,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 2917,SplashDown,PS2,2001,Racing,Atari,0.34,0.27,0,0.09,0.7
 2918,NCAA Football 98,PS,1997,Sports,Electronic Arts,0.39,0.27,0,0.05,0.7
 2919,Jade Empire,XB,2005,Role-Playing,Microsoft Game Studios,0.48,0.19,0,0.03,0.7
-2920,"Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)",PS3,2009,Shooter,Activision,0.28,0.3,0,0.12,0.7
+2920,"Transformers: Revenge of the Fallen (XBox 360 PS3 & PC Versions)",PS3,2009,Shooter,Activision,0.28,0.3,0,0.12,0.7
 2921,The Sims 3,DS,2010,Simulation,Electronic Arts,0.39,0.25,0,0.06,0.7
 2922,Skylanders: Trap Team,WiiU,2014,Action,Activision,0.39,0.25,0,0.06,0.7
 2923,Prince of Persia: The Forgotten Sands,PS3,2010,Action,Ubisoft,0.19,0.36,0.01,0.13,0.7
