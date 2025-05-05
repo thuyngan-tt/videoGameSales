@@ -36,6 +36,17 @@ public class VideoGameSales {
         }
         return null;
     }
+    public static void writeCsv(String filePath, ArrayList<gameSales> gameList) {
+        File csvFile = new File(filePath);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))) {
+            for (gameSales row : gameList) {
+                writer.write(row.toString());
+                writer.newLine();
+            }
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 
     static class gameSales implements Comparable<gameSales> {
         int rank;
@@ -62,6 +73,12 @@ public class VideoGameSales {
             this.JPs = JPs;
             this.otherSales = otherSales;
             this.globalSale = globalSale;
+        }
+
+        @Override
+        public String toString() {
+            return rank + "," + name + "," + platform + "," + year + "," + genre + "," + year + ","
+                    + publisher + "," + NAs + "," + EUs + "," + JPs + "," + otherSales + "," + globalSale;
         }
 
         int getRank() {
@@ -91,6 +108,7 @@ public class VideoGameSales {
         double getNAs() {
             return NAs;
         }
+
         double getEUs() {
             return EUs;
         }
@@ -109,8 +127,8 @@ public class VideoGameSales {
 
         public int compareTo(gameSales other) {
             // Compare by grade (descending order)
-            if (Integer.compare(other.rank, this.rank) != 0) {
-                return Double.compare(other.rank, this.rank );
+            if (Double.compare(other.globalSale, this.globalSale) != 0) {
+                return Double.compare(this.globalSale, other.globalSale);
             }
             return 0;
         }
@@ -123,8 +141,12 @@ public class VideoGameSales {
         Collections.sort(gameList);
         for (int a = 0; a < gameList.size(); a++) {
             System.out.println(gameList.get(a).getRank() + " " + gameList.get(a).getName() + " " + gameList.get(a).getGlobalSale());
-
         }
+
+        String filePath = "C:\\Users\\admin\\Coding_work\\videoGameSales\\out\\sortBaseOnGlobalSales.csv";
+        writeCsv(filePath, gameList);
+        System.out.println("CSV file created successfully: " + filePath);
+
     }
 }
 
