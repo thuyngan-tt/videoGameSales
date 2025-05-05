@@ -29,13 +29,10 @@ public class abc {
         File csvFile = new File(filePath);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))) {
             for (students row : detail) {
-               // writer.write(row.toString());
-                StringBuilder line = new StringBuilder();
-                line.append(students.loopThroughAttributes(row));
-                writer.write(line.toString());
+                writer.write(row.toString());
                 writer.newLine();
             }
-        } catch (IllegalAccessException | IOException ex) {
+        } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
     }
