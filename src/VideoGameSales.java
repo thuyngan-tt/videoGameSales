@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class VideoGameSales {
 
@@ -128,25 +129,88 @@ public class VideoGameSales {
         public int compareTo(gameSales other) {
             // Compare by grade (descending order)
             if (Double.compare(other.globalSale, this.globalSale) != 0) {
-                return Double.compare(this.globalSale, other.globalSale);
+                    return Double.compare(this.globalSale, other.globalSale);
             }
             return 0;
         }
     }
 
     public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your csv file location then choose one of options:\n 1: Print file\n 2: Sort data base on globalSale");
+        System.out.println("Your csv file location: ");
+        String locationFile = sc.nextLine();
+        int enter = 0;
+        do {
+            System.out.println(" Choose one of options:\n 1: Print file\n 2: Sort data base on globalSale");
+            int x = sc.nextInt();
+            if (x == 1) {
+                BufferedReader reader = null;
+                String line = "";
 
-        ArrayList<gameSales> gameList = readFileIntoArraylist("src//videoGamesSales.csv");
-
-        Collections.sort(gameList);
-        for (int a = 0; a < gameList.size(); a++) {
-            System.out.println(gameList.get(a).getRank() + " " + gameList.get(a).getName() + " " + gameList.get(a).getGlobalSale());
-        }
-
-        String filePath = "C:\\Users\\admin\\Coding_work\\videoGameSales\\out\\sortBaseOnGlobalSales.csv";
-        writeCsv(filePath, gameList);
-        System.out.println("CSV file created successfully: " + filePath);
-
+                try {
+                    reader = new BufferedReader(new FileReader(locationFile));
+                    while ((line = reader.readLine()) != null) {
+                        String[] row = line.split(",");
+                        for (String index : row) {
+                            System.out.printf("-%10s", index);
+                        }
+                        System.out.println();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        reader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            else if (x == 2) {
+                ArrayList<gameSales> gameList = readFileIntoArraylist(locationFile);
+                System.out.println(" Enter 1 if you want to sort in ascending order\n Or enter 2 if you want to sort in reverse order");
+                int y = sc.nextInt();
+                if (y == 1) {
+                    Collections.sort(gameList);
+                    for (int a = 0; a < gameList.size(); a++) {
+                        System.out.println(gameList.get(a).getRank() + " " + gameList.get(a).getName() + " " + gameList.get(a).getGlobalSale());
+                    }
+                    System.out.println("Do you want to save these data\n Enter 1 to save \n or enter 0 to exit");
+                    int z = sc.nextInt();
+                    if (z == 1) {
+                        Scanner sb = new Scanner(System.in);
+                        System.out.println("Enter the location where you want to save them");
+                        String filePath = sb.nextLine();
+                        writeCsv(filePath, gameList);
+                        System.out.println("CSV file created successfully: " + filePath);
+                    }
+                    else if (z == 0) {
+                        break;
+                    }
+                }
+                else if (y == 2) {
+                    Collections.sort(gameList, Collections.reverseOrder());
+                    for (int a = 0; a < gameList.size(); a++) {
+                        System.out.println(gameList.get(a).getRank() + " " + gameList.get(a).getName() + " " + gameList.get(a).getGlobalSale());
+                    }
+                    System.out.println("Do you want to save these data\n Enter 1 to save \n or enter 0 to exit");
+                    int z = sc.nextInt();
+                    if (z == 1) {
+                        Scanner sb = new Scanner(System.in);
+                        System.out.println("Enter the location where you want to save them");
+                        String filePath = sb.nextLine();;
+                        writeCsv(filePath, gameList);
+                        System.out.println("CSV file created successfully: " + filePath);
+                    }
+                    else if (z == 0) {
+                        break;
+                    }
+                }
+            }
+            System.out.println("Enter 1 to continue\n or enter 0 to exit program");
+            enter = sc.nextInt();
+        } while (enter == 1);
     }
 }
 
