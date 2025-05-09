@@ -48,8 +48,7 @@ public class abc {
             }
 
             // Sort the list using the natural ordering defined by Comparable
-            Collections.sort(students);
-
+            Collections.sort(students, Collections.reverseOrder());
             // Display sorted list
             System.out.println("\nSorted list of students (by grade descending, then age ascending, then name):");
             for (int i=0; i<students.size(); i++) {
