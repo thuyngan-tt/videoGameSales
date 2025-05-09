@@ -95,6 +95,7 @@ public class abc {
 
     }
 
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<students> detail = new ArrayList<>();
@@ -120,6 +121,16 @@ public class abc {
                 System.out.println("CSV file created successfully: " + filePath);
             }
         }
+        else if (y == 1) {
+            Scanner sb = new Scanner(System.in);
+            System.out.println(" enter name of student");
+            String studentName = sb.nextLine();
+            System.out.println("____" + studentName);
+            if (detail.getFirst().getName().equals(studentName)) {
+                System.out.println(detail.getFirst().getAge());
+            }
+        }
+
         /*
         String filePath = "C:\\Users\\admin\\Coding_work\\videoGameSales\\out\\output.csv";
         writeCsv(filePath, detail);
