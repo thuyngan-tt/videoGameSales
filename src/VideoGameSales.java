@@ -137,12 +137,13 @@ public class VideoGameSales {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your csv file location then choose one of options:\n 1: Print file\n 2: Sort data base on globalSale");
+        System.out.println("Enter your csv file location then choose one of options:\n 1: Display your csv file on screen\n 2: Sort data base on globalSale\n 3: Search globalSale base on name of video game");
         System.out.println("Your csv file location: ");
         String locationFile = sc.nextLine();
         int enter = 0;
+        ArrayList<gameSales> gameList = readFileIntoArraylist(locationFile);
         do {
-            System.out.println(" Choose one of options:\n 1: Print file\n 2: Sort data base on globalSale");
+            System.out.println(" Choose one of options:\n 1: Print csv file\n 2: Sort data base on globalSale\n3: Search globalSale base on name of video game");
             int x = sc.nextInt();
             if (x == 1) {
                 BufferedReader reader = null;
@@ -168,7 +169,6 @@ public class VideoGameSales {
                 }
             }
             else if (x == 2) {
-                ArrayList<gameSales> gameList = readFileIntoArraylist(locationFile);
                 System.out.println(" Enter 1 if you want to sort in ascending order\n Or enter 2 if you want to sort in reverse order");
                 int y = sc.nextInt();
                 if (y == 1) {
@@ -208,11 +208,18 @@ public class VideoGameSales {
                     }
                 }
             }
+            else if (x == 3) {
+                Scanner sb = new Scanner(System.in);
+                System.out.println(" Enter name of video game then we will return its globalSale");
+                String gameName = sb.nextLine();
+                for (int i=0; i<gameList.size(); i++) {
+                    if (gameList.get(i).getName().equals(gameName)) {
+                        System.out.println("name: " + gameName + "globalSale: " + " " + gameList.get(i).getGlobalSale());
+                    }
+                }
+            }
             System.out.println("Enter 1 to continue\n or enter 0 to exit program");
             enter = sc.nextInt();
         } while (enter == 1);
     }
 }
-
-
-
