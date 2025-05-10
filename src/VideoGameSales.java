@@ -137,13 +137,13 @@ public class VideoGameSales {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your csv file location then choose one of options:\n 1: Print file\n 2: Sort data base on globalSale");
+        System.out.println("Enter your csv file location then choose one of options:\n 1: Display your csv file on screen\n 2: Sort data base on globalSale\n 3: Search globalSale base on name of video game");
         System.out.println("Your csv file location: ");
         String locationFile = sc.nextLine();
         int enter = 0;
         ArrayList<gameSales> gameList = readFileIntoArraylist(locationFile);
         do {
-            System.out.println(" Choose one of options:\n 1: Print file\n 2: Sort data base on globalSale\n3: Search globalSale base on name of video game");
+            System.out.println(" Choose one of options:\n 1: Print csv file\n 2: Sort data base on globalSale\n3: Search globalSale base on name of video game");
             int x = sc.nextInt();
             if (x == 1) {
                 BufferedReader reader = null;
@@ -223,6 +223,3 @@ public class VideoGameSales {
         } while (enter == 1);
     }
 }
-
-
-
